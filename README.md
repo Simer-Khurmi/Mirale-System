@@ -9,6 +9,7 @@ It resolves **natural language commands** (including ambiguous ones) into **vali
 
 This system is designed to handle **complex device-capability mapping**, **real-time MQTT publishing**, and **LLM-based ambiguity resolution** — ideal for **job-level, production-grade deployments**.
 
+![ChatGPT Image Aug 9, 2025, 04_17_12 PM](https://github.com/user-attachments/assets/e022bf91-1527-4d78-86b4-976aa1de306a)
 
 
 
