@@ -1,10 +1,10 @@
-# 🏠 IntelliHome AI
+# 🏠 Panasonic Mirale Snart Home
 > **An advanced, PhD-level Smart Home Orchestration System** powered by Local/NLP-driven LLM resolution, MQTT real-time control, and dynamic device capability mapping.
 
 ---
 
 ## 🚀 Overview
-**IntelliHome AI** is a modular **LLM-powered IoT control system** designed for **multi-room, multi-device smart homes**.  
+**MirAle System** is a modular **LLM-powered IoT control system** designed for **multi-room, multi-device smart homes**.  
 It resolves **natural language commands** (including ambiguous ones) into **validated MQTT commands** using a **hybrid rule-first + LLM fallback approach**.
 
 This system is designed to handle **complex device-capability mapping**, **real-time MQTT publishing**, and **LLM-based ambiguity resolution** — ideal for **job-level, production-grade deployments**.
