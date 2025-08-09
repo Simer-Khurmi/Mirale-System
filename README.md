@@ -43,34 +43,8 @@ This system is designed to handle **complex device-capability mapping**, **real-
 
 ---
 
-## 🏗 Architecture
 
-[User Command]
-│
-▼
-┌──────────────┐
-│ LLM Resolver │ ← Hybrid: Regex + Semantic Parsing + GPT fallback
-└──────┬───────┘
-│ Parsed Intent
-▼
-┌──────────────┐
-│ Device Match │ ← Finds candidates from JSON registry
-└──────┬───────┘
-│ Validated Capability & Value
-▼
-┌──────────────┐
-│ MQTT Bridge │ ← Publishes structured command to broker
-└──────┬───────┘
-│
-▼
-[IoT Device Receives Command]
-│
-▼
-[Device Action + Status Feedback]
 
-markdown
-Copy
-Edit
 
 **Components:**
 - `llm/engine.py` — Intent parsing, ambiguity detection, clarification prompts.
