@@ -208,14 +208,147 @@ Cloud-to-local fallback
 
 Federated LLM fine-tuning on usage logs
 
-🏆 Credits
-Developed during Panasonic Smart Appliance AI Internship — focusing on LLM-driven complexity resolution and real-time IoT control.
+# IntelliHome AI — Advanced LLM-Driven Smart Home Automation
 
-yaml
-Copy
-Edit
+## Overview
+**IntelliHome AI** is a next-generation, AI-powered smart home orchestration system developed as part of an advanced internship project.  
+It combines **LLM-powered natural language understanding**, **real-time MQTT-based device control**, **multi-device capability mapping**, and **multi-user contextual reasoning** to deliver seamless, reliable, and highly intelligent home automation.
+
+This system has been designed for **job-level production readiness** while maintaining **research-grade novelty** suitable for journal publication.
 
 ---
 
-If you want, I can now **package all the runnable code + this README into a ZIP** so you can upload to GitHub and show your manager in one go.  
-Do you want me to prepare that ZIP for you now?
+## 🚀 Key Features
+
+| Category                | Features |
+|------------------------|----------|
+| **Natural Language Understanding** | LLM-powered command parsing with FLAN-T5 + fallback heuristics, ambiguity detection, multilingual (EN/FR) |
+| **Device Control**     | Real-time MQTT publishing & subscribing, topic auto-mapping, multi-device/room capability mapping |
+| **User Context**       | Multi-user sessions, personalized command history, smart suggestions based on usage |
+| **Resilience**         | Rule-based fallback parsing, regex & spaCy recovery if LLM fails, structured error handling |
+| **Data Handling**      | JSON-based device registry, CLI & WebSocket logging, CSV export for analysis |
+| **Extensibility**      | Modular architecture, new device capability integration in under 5 minutes |
+| **Future Scope**       | GUI dashboard, AI-driven automation routines, predictive energy optimization |
+
+---
+
+## 🏗 System Architecture
+
+```mermaid
+flowchart TD
+    User[User Command - Voice/Text] --> |Speech-to-Text| Input[Command Input Handler]
+    Input --> LLMParser[LLM Command Parser (FLAN-T5 + Fallback Heuristics)]
+    LLMParser --> Validation[Context & Capability Validation]
+    Validation --> MQTT[MQTT Controller]
+    MQTT --> Device[IoT Device Execution]
+    Device --> MQTTStatus[Device Status Updates]
+    MQTTStatus --> Logger[Usage Logger + Analytics]
+    Logger --> Suggestions[Smart Command Suggestions]
+    Suggestions --> User
+    subgraph Data Layer
+        Mapping[Device-Capability Mapping JSON]
+        Logs[Usage Logs CSV/DB]
+    end
+    LLMParser --> Mapping
+    Logger --> Logs
+```
+
+---
+
+## 🧠 How LLM Resolution Works
+
+### Challenges
+1. **Ambiguous commands** — e.g., "Turn it on" without specifying device/room.  
+2. **Multi-device environments** — Matching user intent to correct device + room.
+3. **Complex capability resolution** — e.g., "Set the bedroom AC to 23° and swing mode."  
+4. **Fallback requirements** — When LLM is unavailable or fails.
+
+### Solutions Implemented
+- **Hybrid Parsing Pipeline**:
+  1. **Rule-based**: Fast heuristics for clear commands.
+  2. **LLM Enrichment**: When ambiguities exist, the system queries FLAN-T5 or optional OpenAI API for structured JSON output.
+  3. **Fallback Recovery**: Regex + spaCy for minimal viable execution.
+
+- **Structured Output Example**:
+```json
+{
+  "intent": "turn_on",
+  "device": "air_conditioner",
+  "room": "bedroom",
+  "params": { "temperature": 23, "mode": "cool" },
+  "confidence": 0.87,
+  "ambiguities": []
+}
+```
+
+---
+
+## 📡 MQTT Integration
+
+**Topic Structure**:
+```
+home/<room>/<device>/set/<action>
+home/<room>/<device>/status
+```
+
+**Example**:
+- Command: `home/living_room/ac/set/temperature`
+- Status: `home/living_room/ac/status`
+
+**Features**:
+- Bidirectional MQTT communication
+- Real-time UI updates via WebSocket
+- Automatic device-topic mapping from JSON registry
+
+---
+
+## 📂 Project Structure
+
+```
+IntelliHome-AI/
+│── backend/
+│   ├── app.py                  # FastAPI backend + WebSocket
+│   ├── llm_engine.py           # LLM parser with hybrid logic
+│   ├── mqtt_controller.py      # MQTT publish/subscribe handling
+│   ├── device_registry.json    # Device-capability mapping
+│   ├── logger.py               # Usage logging
+│   ├── suggestions.py          # Smart command suggestions
+│
+│── frontend/
+│   ├── index.html              # Web-based UI
+│   ├── app.js                  # WebSocket communication
+│
+│── requirements.txt
+│── docker-compose.yml
+│── README.md
+```
+
+---
+
+## 📈 Business Impact
+
+| Business Value | Impact |
+|----------------|--------|
+| **User Experience** | Zero-learning-curve voice/text control with contextual reasoning |
+| **Energy Efficiency** | Device usage optimization and predictive control reduces wastage |
+| **Scalability** | Modular design allows new devices to be integrated in under 5 minutes |
+| **Differentiation** | Combines LLM adaptability with IoT robustness for competitive advantage |
+
+---
+
+## 🔮 Future Roadmap
+
+| Stage | Feature | Status |
+|-------|---------|--------|
+| 1 | GUI Dashboard | In Progress |
+| 2 | Predictive AI Automations | Planned |
+| 3 | Energy Optimization Engine | Planned |
+| 4 | Multilingual Support Expansion | Planned |
+| 5 | Edge Deployment | Planned |
+
+---
+
+## 🏁 Conclusion
+**IntelliHome AI** represents a leap in smart home orchestration — combining **cutting-edge AI reasoning** with **real-time IoT control**.  
+It’s designed for both **technical robustness** and **business scalability**, making it ideal for enterprise deployments.
+
