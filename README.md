@@ -1,5 +1,5 @@
 # 🏠 Panasonic Mirale Snart Home
-> **An advanced, PhD-level Smart Home Orchestration System** powered by Local/NLP-driven LLM resolution, MQTT real-time control, and dynamic device capability mapping.
+> **An advanced System** powered by Local/NLP-driven LLM resolution, MQTT real-time control, and dynamic device capability mapping.
 
 ---
 
