@@ -1,11 +1,3 @@
-Got it — I’ll prepare your **journal-level GitHub README.md** so you can directly copy-paste it into your repo.
-It will clearly explain **architecture**, **features**, **LLM resolution process**, **setup**, and **demo flow** for your manager.
-
----
-
-## 📄 README.md — IntelliHome AI (Advanced LLM + MQTT Smart Home Control)
-
-```markdown
 # 🏠 IntelliHome AI
 > **An advanced, PhD-level Smart Home Orchestration System** powered by Local/NLP-driven LLM resolution, MQTT real-time control, and dynamic device capability mapping.
 
@@ -49,32 +41,32 @@ This system is designed to handle **complex device-capability mapping**, **real-
 
 ## 🏗 Architecture
 
-```
-
-\[User Command]
+[User Command]
 │
 ▼
 ┌──────────────┐
-│ LLM Resolver │  ← Hybrid: Regex + Semantic Parsing + GPT fallback
+│ LLM Resolver │ ← Hybrid: Regex + Semantic Parsing + GPT fallback
 └──────┬───────┘
 │ Parsed Intent
 ▼
 ┌──────────────┐
-│ Device Match │  ← Finds candidates from JSON registry
+│ Device Match │ ← Finds candidates from JSON registry
 └──────┬───────┘
 │ Validated Capability & Value
 ▼
 ┌──────────────┐
-│ MQTT Bridge  │  ← Publishes structured command to broker
+│ MQTT Bridge │ ← Publishes structured command to broker
 └──────┬───────┘
 │
 ▼
-\[IoT Device Receives Command]
+[IoT Device Receives Command]
 │
 ▼
-\[Device Action + Status Feedback]
+[Device Action + Status Feedback]
 
-```
+markdown
+Copy
+Edit
 
 **Components:**
 - `llm/engine.py` — Intent parsing, ambiguity detection, clarification prompts.
@@ -107,22 +99,22 @@ If missing info → LLM clarifies:
 ---
 
 ## 📂 Project Structure
-```
-
 .
-├── app.py                  # FastAPI entry point
-├── frontend/               # Minimal UI + WS log
-├── llm/engine.py           # Parsing engine
-├── mqtt/bridge.py          # MQTT bridge
-├── registry/devices.json   # Device registry
-├── registry/registry.py    # Lookup & validation
-├── telemetry/bus.py        # WebSocket log bus
+├── app.py # FastAPI entry point
+├── frontend/ # Minimal UI + WS log
+├── llm/engine.py # Parsing engine
+├── mqtt/bridge.py # MQTT bridge
+├── registry/devices.json # Device registry
+├── registry/registry.py # Lookup & validation
+├── telemetry/bus.py # WebSocket log bus
 ├── requirements.txt
 ├── Dockerfile
 ├── docker-compose.yml
 └── .env.example
 
-````
+yaml
+Copy
+Edit
 
 ---
 
@@ -133,57 +125,52 @@ If missing info → LLM clarifies:
 git clone https://github.com/YOUR_USERNAME/intellihome-ai.git
 cd intellihome-ai
 cp .env.example .env
-````
-
-### 2️⃣ Docker (Recommended)
-
-```bash
+2️⃣ Docker (Recommended)
+bash
+Copy
+Edit
 docker compose up --build
-```
+UI → http://localhost:8080
 
-* UI → [http://localhost:8080](http://localhost:8080)
-* API Docs → [http://localhost:8000/docs](http://localhost:8000/docs)
+API Docs → http://localhost:8000/docs
 
-### 3️⃣ Local (Without Docker)
-
-```bash
+3️⃣ Local (Without Docker)
+bash
+Copy
+Edit
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app:app --reload
-```
+Requires Mosquitto broker running locally.
 
-> Requires Mosquitto broker running locally.
-
----
-
-## 💡 Demo Ideas
-
+💡 Demo Ideas
 Try in UI:
 
-* `"Set bedroom AC to 24 degrees"`
-* `"Dim living room lights to 20%"`
-* `"Open living room curtains"`
-* `"Movie mode in living room"`
+"Set bedroom AC to 24 degrees"
 
----
+"Dim living room lights to 20%"
 
-## 🛠 Future Enhancements
+"Open living room curtains"
 
-* Voice input via WebRTC
-* Scene orchestration (“Party mode” triggers multiple devices)
-* Cloud-to-local fallback
-* Federated LLM fine-tuning on usage logs
+"Movie mode in living room"
 
----
+🛠 Future Enhancements
+Voice input via WebRTC
 
-## 🏆 Credits
+Scene orchestration (“Party mode” triggers multiple devices)
 
-Developed during Panasonic Smart Appliance AI Internship — focusing on **LLM-driven complexity resolution** and **real-time IoT control**.
+Cloud-to-local fallback
 
-```
+Federated LLM fine-tuning on usage logs
+
+🏆 Credits
+Developed during Panasonic Smart Appliance AI Internship — focusing on LLM-driven complexity resolution and real-time IoT control.
+
+yaml
+Copy
+Edit
 
 ---
 
 If you want, I can now **package all the runnable code + this README into a ZIP** so you can upload to GitHub and show your manager in one go.  
 Do you want me to prepare that ZIP for you now?
-```
