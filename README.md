@@ -10,7 +10,29 @@ It resolves **natural language commands** (including ambiguous ones) into **vali
 This system is designed to handle **complex device-capability mapping**, **real-time MQTT publishing**, and **LLM-based ambiguity resolution** — ideal for **job-level, production-grade deployments**.
 
 ---
+## 📂 Folder Structure
 
+IntelliHomeAI/
+│
+├── backend/
+│   ├── prompt_agent.py        # LLM parsing + conflict resolution
+│   ├── mqtt_controller.py     # MQTT real-time control
+│   ├── device_mapper.py       # JSON-based device-capability mapping
+│   ├── api.py                 # Flask API endpoints
+│   ├── config.py              # Configurations
+│
+├── data/
+│   ├── device_mapping.json    # Device-capability mapping
+│
+├── frontend/
+│   ├── gui.py                 # Tkinter/Streamlit GUI for demo
+│
+├── tests/
+│   ├── test_agent.py
+│
+├── requirements.txt
+├── README.md
+└── architecture.png
 ## ✨ Key Features
 - **Multi-Room, Multi-Device Support**  
   JSON-based device registry with full mapping of IDs, aliases, MQTT topics, and capabilities.
