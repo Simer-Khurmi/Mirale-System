@@ -9,10 +9,13 @@ It resolves **natural language commands** (including ambiguous ones) into **vali
 
 This system is designed to handle **complex device-capability mapping**, **real-time MQTT publishing**, and **LLM-based ambiguity resolution** — ideal for **job-level, production-grade deployments**.
 
-![ChatGPT Image Aug 9, 2025, 04_17_12 PM](https://github.com/user-attachments/assets/e022bf91-1527-4d78-86b4-976aa1de306a)
 
 
 
+
+![ChatGPT Image Aug 9, 2025, 04_17_12 PM](https://github.com/user-attachments/assets/b1006d8d-20b1-4b86-911e-9f2598d07b8c)<?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:4db4aa83-601e-00a4-4b1a-090bba000000
+Time:2025-08-09T10:47:13.1975932Z</Message><AuthenticationErrorDetail>Signed expiry time [Sat, 09 Aug 2025 10:32:32 GMT] must be after signed start time [Sat, 09 Aug 2025 10:47:13 GMT]</AuthenticationErrorDetail></Error>
 
 
 
