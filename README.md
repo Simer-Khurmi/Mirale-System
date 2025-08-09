@@ -39,6 +39,23 @@ This system is designed to handle **complex device-capability mapping**, **real-
 ├─ .env.example
 └─ README.md
 
+flowchart LR
+A[User Utterance\n(text/voice)] --> B[FastAPI /gateway]
+B --> C[LLM Orchestrator\n(intent + entities + plan)]
+C --> D[Constraint Validator\n(rules + schema + firmware gates)]
+D --> E[Planner\n(device graph & exceptions)]
+E --> F[Dry-Run Simulator\nshadow state]
+F -->|Plan OK| G[MQTT Publisher\nQoS1 + correlation]
+G --> H[(MQTT Broker)]
+H --> I[Edge Devices]
+I --> J[Status/ACK]
+J --> K[State Tracker\nShadow + Ledger]
+K --> L[Resolution Engine\nsuccess/rollback]
+L --> M[User Feedback\nexplanations + next steps]
+C --> N[(Vector/Alias Memory)]
+E --> O[(Device Registry\ncapability map)]
+
+
 ## ✨ Key Features
 - **Multi-Room, Multi-Device Support**  
   JSON-based device registry with full mapping of IDs, aliases, MQTT topics, and capabilities.
