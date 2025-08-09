@@ -9,37 +9,9 @@ It resolves **natural language commands** (including ambiguous ones) into **vali
 
 This system is designed to handle **complex device-capability mapping**, **real-time MQTT publishing**, and **LLM-based ambiguity resolution** — ideal for **job-level, production-grade deployments**.
 
----
-## 📂 Folder Structure
 
 
-├─ backend/
-│  ├─ app.py                  # FastAPI server (REST + WebSocket)
-│  ├─ orchestrator.py         # LLM agent: parse → plan → explain
-│  ├─ validators.py           # hard constraints, schema & safety
-│  ├─ planner.py              # multi-device planning, exceptions
-│  ├─ mqtt_io.py              # MQTT pub/sub, correlation, retries
-│  ├─ state.py                # shadow state, ledger, rollback
-│  ├─ registry.py             # device/capability graph
-│  ├─ prompts.py              # system & critique prompts
-│  └─ config.py               # settings loader
-├─ data/
-│  ├─ devices.schema.json     # capability schema
-│  ├─ devices.sample.json     # example inventory
-│  └─ synonyms.json           # alias & fuzzy matching support
-├─ tests/
-│  ├─ test_end_to_end.py
-│  └─ fixtures/
-├─ docs/
-│  └─ architecture.mmd        # mermaid diagram source
-├─ docker/
-│  ├─ Dockerfile
-│  └─ docker-compose.yml
-├─ requirements.txt
-├─ .env.example
-└─ README.md
 
-flowchart LR
 A[User Utterance\n(text/voice)] --> B[FastAPI /gateway]
 B --> C[LLM Orchestrator\n(intent + entities + plan)]
 C --> D[Constraint Validator\n(rules + schema + firmware gates)]
