@@ -12,27 +12,33 @@ This system is designed to handle **complex device-capability mapping**, **real-
 ---
 ## 📂 Folder Structure
 
-IntelliHomeAI/
-│
-├── backend/
-│   ├── prompt_agent.py        # LLM parsing + conflict resolution
-│   ├── mqtt_controller.py     # MQTT real-time control
-│   ├── device_mapper.py       # JSON-based device-capability mapping
-│   ├── api.py                 # Flask API endpoints
-│   ├── config.py              # Configurations
-│
-├── data/
-│   ├── device_mapping.json    # Device-capability mapping
-│
-├── frontend/
-│   ├── gui.py                 # Tkinter/Streamlit GUI for demo
-│
-├── tests/
-│   ├── test_agent.py
-│
-├── requirements.txt
-├── README.md
-└── architecture.png
+
+├─ backend/
+│  ├─ app.py                  # FastAPI server (REST + WebSocket)
+│  ├─ orchestrator.py         # LLM agent: parse → plan → explain
+│  ├─ validators.py           # hard constraints, schema & safety
+│  ├─ planner.py              # multi-device planning, exceptions
+│  ├─ mqtt_io.py              # MQTT pub/sub, correlation, retries
+│  ├─ state.py                # shadow state, ledger, rollback
+│  ├─ registry.py             # device/capability graph
+│  ├─ prompts.py              # system & critique prompts
+│  └─ config.py               # settings loader
+├─ data/
+│  ├─ devices.schema.json     # capability schema
+│  ├─ devices.sample.json     # example inventory
+│  └─ synonyms.json           # alias & fuzzy matching support
+├─ tests/
+│  ├─ test_end_to_end.py
+│  └─ fixtures/
+├─ docs/
+│  └─ architecture.mmd        # mermaid diagram source
+├─ docker/
+│  ├─ Dockerfile
+│  └─ docker-compose.yml
+├─ requirements.txt
+├─ .env.example
+└─ README.md
+
 ## ✨ Key Features
 - **Multi-Room, Multi-Device Support**  
   JSON-based device registry with full mapping of IDs, aliases, MQTT topics, and capabilities.
