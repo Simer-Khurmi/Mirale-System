@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>IntelliHome AI</title>
+    <link rel="stylesheet" href="/style.css"/>
+  </head>
+  <body>
+    <header>
+      <h1>IntelliHome AI</h1>
+      <div id="status">
+        <span id="wsDot" class="dot"></span> Realtime Connected
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Devices</h2>
+        <div id="devices"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Ask the AI</h2>
+        <div class="row">
+          <input id="nl" placeholder="e.g., Set bedroom AC swing for 30 minutes (or en Français)"/>
+          <button id="parseBtn">Parse</button>
+        </div>
+        <pre id="parsed"></pre>
+      </section>
+
+      <section class="panel">
+        <h2>MQTT / System Log</h2>
+        <pre id="logs"></pre>
+      </section>
+    </main>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
