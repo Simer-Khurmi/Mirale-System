@@ -8,9 +8,7 @@
 It resolves **natural language commands** (including ambiguous ones) into **validated MQTT commands** using a **hybrid rule-first + LLM fallback approach**.
 
 This system is designed to handle **complex device-capability mapping**, **real-time MQTT publishing**, and **LLM-based ambiguity resolution** — ideal for **job-level, production-grade deployments**.
-![ChatGPT Image Aug 9, 2025, 04_17_12 PM](https://github.com/user-attachments/assets/c72af9cb-7127-4a02-b790-c025d501c4a6)<?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
-RequestId:4db4aa83-601e-00a4-4b1a-090bba000000
-Time:2025-08-09T10:47:13.1975932Z</Message><AuthenticationErrorDetail>Signed expiry time [Sat, 09 Aug 2025 10:32:32 GMT] must be after signed start time [Sat, 09 Aug 2025 10:47:13 GMT]</AuthenticationErrorDetail></Error>
+![ChatGPT Image Aug 9, 2025, 04_17_12 PM](https://github.com/user-attachments/assets/c72af9cb-7127-4a02-b790-c025d501c4a6)
 
 ## ✨ Key Features
 - **Multi-Room, Multi-Device Support**  
