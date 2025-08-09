@@ -234,7 +234,7 @@ This system has been designed for **job-level production readiness** while maint
 
 ## 🏗 System Architecture
 
-```mermaid
+mermaid
 flowchart TD
     User[User Command - Voice/Text] --> |Speech-to-Text| Input[Command Input Handler]
     Input --> LLMParser[LLM Command Parser (FLAN-T5 + Fallback Heuristics)]
