@@ -1,4 +1,4 @@
-# 🏠 Panasonic Mirale Snart Home
+# 🏠 Panasonic Mirale Smart Home
 > **An advanced System** powered by Local/NLP-driven LLM resolution, MQTT real-time control, and dynamic device capability mapping.
 
 ---
