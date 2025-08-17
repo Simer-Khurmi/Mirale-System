@@ -8,7 +8,6 @@
 It resolves **natural language commands** (including ambiguous ones) into **validated MQTT commands** using a **hybrid rule-first + LLM fallback approach**.
 
 This system is designed to handle **complex device-capability mapping**, **real-time MQTT publishing**, and **LLM-based ambiguity resolution** — ideal for **job-level, production-grade deployments**.
-![ChatGPT Image Aug 9, 2025, 04_17_12 PM](https://github.com/user-attachments/assets/c72af9cb-7127-4a02-b790-c025d501c4a6)
 
 ## ✨ Key Features
 - **Multi-Room, Multi-Device Support**  
